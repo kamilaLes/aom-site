@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block  title %}
+Formularz zapisu
+{% endblock  %}
+
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "studio/css/form.css" %}">
+{% endblock  %}
+
+{% block content %}
+<div style="background-image: url({% static 'studio/images/bg-photo.jpg' %});
+background-size:cover; background-repeat:no-repeat;" >
+    <div class="container bg-img">
+        <div class="d-flex justify-content-center">  
+            <div class="form-group hover-opacity bg-light p-4 mt-4 mb-4 form-size">
+                <form class='violet' action="" method="POST">
+                    <div class="row p-3">
+                        <h1 class="col-8 text-danger d-flex justify-content-end">Dołącz do nas!</h1>
+                        <img src={% static "studio/images/AOM_red.png" %} alt="log_red" class="col-4 logo-size">
+                    </div>
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <div class="row">
+                        <button class="btn btn-outline-danger float-start">Zapisz się!</button>       
+                    </div>   
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}

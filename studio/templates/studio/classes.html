@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block  title %}
+Zajęcia
+{% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "studio/css/index.css" %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="container mt-4 mb-4">
+    <div class="h1 d-flex justify-content-center mb-4 brand-color">Nasze zajęcia</div>
+    <div class="row">
+        
+    {% for class in classes %}
+        {% include "studio/includes/classes-card.html" %}
+    {% endfor %}    
+    </div>
+</div>
+
+
+{% endblock  %}

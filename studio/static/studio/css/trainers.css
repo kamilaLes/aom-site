@@ -1,0 +1,13 @@
+.trainer-image-width {
+    max-width: 400px
+}
+
+@media only screen and (min-width:600px) {
+    .zoom-img {
+        transform: scale(1);
+        transition: 0.3s ease-in-out;
+    }
+    .zoom-img:hover {
+        transform: scale(1.5);
+    }
+}

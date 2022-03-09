@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block  title %}
+Strona główna
+{% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "studio/css/index.css" %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="img d-flex justify-content-center mt-5">
+
+    <a href="{% url "classes" %}">
+        <img class="logo-size" src="{% static "studio/images/logo.jpg" %}" alt="logo">
+    </a>
+
+</div> 
+
+{% endblock  %}

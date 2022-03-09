@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block  title %}
+Trenerzy
+{% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "studio/css/trainers.css" %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="h1  mb-4 brand-color d-flex justify-content-center mb-5">Nasi instruktorzy</div>
+
+    <div class="row d-flex flex-row p-4">    
+       
+    {% for trainer in trainers %}
+     <div class = "col">
+        <div class="d-flex justify-content-center ">
+          <a href="{% url "trainer-detail" trainer.pk %}" class="underline-none">  
+              <div class="zoom-img">
+        <img src="{{trainer.image.url}}" alt="{{trainer.full_name}}" class="img-fluid trainer-image-width mb-2 p-4 d-flex">
+        
+        <figcaption class="d-flex justify-content-center text-light">{{trainer.full_name}}</figcaption>
+    </div>
+    </a>
+    </div>
+</div>
+    {% endfor %}    
+    </div>
+</div>
+
+{% endblock  %}

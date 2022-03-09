@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block  title %}
+Zajęcia - opis
+{% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "studio/css/classes-detail.css" %}">
+{% endblock  %}
+
+{% block content  %}
+
+<div class="container mt-4 p-4 bg-light">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{classes.image.url}}" alt="{{classes.title}}" class="img img-fluid float-start mb-2 ">
+        </div>
+        <div class="col-md-6 d-flex justify-content-center m-auto h-75 font-list-size">
+            <div class="list-group p-4">
+                {% for category in categories  %}
+                    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary ">{{category.name}}</a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="row">
+            <h4 class="violet">{{classes.title}}</h4>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3 class="violet">Czym jest {{classes.title | lower}}?</h3>
+            <p>{{classes.content}}</p>
+            <h3 class="violet">Co należy zabrać na trening?</h3>
+            <ul>
+                {% for equip in equipment %}
+                <li>{{equip.name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row-mt-4">
+        <div class="col-md-4 ">
+            <h4 class="violet">Prowadzący:</h4>
+
+            <div class="row">
+            {% for trainer in trainers %}
+                <div class="col p-0">
+                    <div>
+                        <a class="underline-none link-dark" href="{% url "trainer-detail" trainer.pk %}">
+                        <img src="{{trainer.image.url}}" alt="{{trainer.name}}" class="img-fluid rounded-circle trainer-size-img mb-2 mt-2">
+                        <figcaption>{{trainer.full_name}}</figcaption>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock  %}

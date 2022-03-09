@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block  title %}
+O trenerach
+{% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "studio/css/trainer-detail.css" %}">
+{% endblock  %}
+
+{% block content %}
+
+<div class="container mt-4 p-4 bg-light">
+
+    <div class="row d-flex flex-row p-4">
+        <div class="col md-12 d-flex justify-content-center">
+            <div class="">
+                <img class="img img-fluid" src="{{trainer.image.url}}" alt="{{trainer.name}}">
+                <figcaption class="h3 violet d-flex justify-content-center mt-4">{{trainer.full_name}}</figcaption>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex flex-row p-3">
+        <div class="col-md-12">
+            <h3 class="violet">{{trainer.first_name}} o sobie </h3>
+            <p>{{trainer.content}}</p>
+        </div>
+    </div>
+
+    <div class="row p-3">
+        <div class="col-md-4">
+            <h3 class="violet"> Zajęcia które prowadzi {{trainer.first_name}} </h3>
+
+            <div class="row">
+              {% for class in classes %}
+                    <div class="col p-0">
+                        <div>
+                            <a href="{% url "classes-detail" class.slug%}"class="underline-none link-dark">
+                                <img src="{{class.image.url}}" alt="{{class.title}}" class="img-fluid rounded-circle classes-size-img mb-2 mt-2 ">
+                                <figcaption>{{class.title}}</figcaption>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock  %}

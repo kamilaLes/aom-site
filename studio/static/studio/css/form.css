@@ -1,0 +1,34 @@
+@media only screen and (max-width:1000px) {
+    .logo-size {
+        display: none;
+    }
+}
+
+.img {
+    max-height: 80vh;
+}
+
+@media only screen and (min-width:600px) {
+    .form-size {
+        max-width: 50vh;
+    }
+}
+
+.form-size {
+    max-width: 100vh;
+}
+
+.hover-opacity {
+    opacity: 0.75;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-opacity:hover {
+    opacity: 1;
+}
+
+@media screen and (max-width:1000px) {
+    .bg-img {
+        background-color: rgb(40, 20, 48);
+    }
+}

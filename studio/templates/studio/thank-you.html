@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block  title %}
+Dziękujemy
+{% endblock  %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static "studio/css/index.css" %}">
+<link rel="stylesheet" href="{% static "studio/css/form.css" %}">
+{% endblock  %}
+
+{% block content %}
+>
+<div class="container">
+    <div class="d-flex justify-content-center pb-4">
+        <img class="img img-fluid" src="{% static "studio/images/thank-you.jpg"%}" alt="">
+    </div>
+    <div class="d-flex justify-content-center"> 
+        <div class="d-flex-column text-danger">
+            <h1>Dziękujemy za dokonanie zapisu.</h1>
+            <h5 class="d-flex justify-content-center">Do zobaczenia na treningu!</h5> 
+            <div class="float-end pt-0">
+                <a href="{% url "client-form"%}"><button class="btn btn-lg btn-outline-danger">Powrót</button></a>
+            </div>
+        </div>
+    </div>
+</div>    
+
+
+{% endblock  %}

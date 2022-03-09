@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-2 mb-3">
+    <a href="{% url "index"%}" class="navbar-brand "><span class="brand-color">Art of move</span></a> 
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto me-auto-sm p-1">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url "classes" %}">Nasze zajęcia</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url "client-form"%}">Zapisy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cennik</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" href="#">O nas</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{% url "trainers" %}">Nasi instruktorzy</a></li>
+                    <li><a class="dropdown-item" href="#">Studio</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Kontakt</a>
+            </li>
+        </ul>
+    </div>
+</nav>

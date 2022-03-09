@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Mochiy+Pop+P+One&display=swap');
+body {
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+.brand-color {
+    color: rgb(179, 38, 245);
+}
+
+.body-color {
+    background-color: black;
+}
+
+.underline-none {
+    text-decoration: none;
+}
+
+.violet {
+    color: rgb(107, 63, 107);
+}
+
+.violet-light {
+    color: rgb(136, 45, 136);
+}
